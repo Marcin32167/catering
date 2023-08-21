@@ -1,7 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from '../src/components/header.jsx';
-import Main from '../src/components/main.jsx';
 import Footer from '../src/components/footer.jsx';
 import Home from '../src/pages/home.jsx';
 import About from '../src/pages/about.jsx';
@@ -13,8 +12,8 @@ function App() {
             <div className="App">
                 <Header />
                 <Routes>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/about" component={About} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
                 </Routes>
                 <Footer />
             </div>
