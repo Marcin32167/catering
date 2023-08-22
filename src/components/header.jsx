@@ -44,8 +44,10 @@ const Header = () => {
                     <li className="nav-item">
                         <Link to="/about" onClick={toggleMenu}>About</Link>
                     </li>
-                    <button className={"btn-cta"}>zamów online
-                    </button>
+                    <Link to="/logowanie" onClick={toggleMenu}>
+                        <button className={"btn-client"}>panel klienta</button>
+                    </Link>
+                    <button className={"btn-cta"}>zamów online</button>
                 </ul>
             </nav>
         </header>
