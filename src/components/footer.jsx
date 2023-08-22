@@ -2,6 +2,7 @@ import React from 'react';
 import facebookIcon from "../assets/facebook-b.svg";
 import instagramIcon from "../assets/instagram-b.svg";
 import linkedinIcon from "../assets/linkedin-b.svg";
+import {Link} from "react-router-dom";
 
 
 const Footer = () => {
@@ -28,14 +29,14 @@ const Footer = () => {
                             <a className={"footer-link-nav"}>Link 4</a>
                         </div>
                         <div className={"footer-card footer-card_end"}>
-                            <h4 className={"footer-title"}>Lorem ipsum</h4>
-                            <a className={"footer-link-nav"}>Link 1</a>
+                            <h4 className={"footer-title"}>Kalkulatory</h4>
+                            <Link to="/kalkulator-bmi" className={"footer-link-nav"}>Kalkulator BMI</Link>
                             <a className={"footer-link-nav"}>Link 2</a>
                             <a className={"footer-link-nav"}>Link 3</a>
                             <a className={"footer-link-nav"}>Link 4</a>
                         </div>
                         <div className={"footer-card footer-card_end"}>
-                            <h4 className={"footer-title"}>Lorem ipsum</h4>
+                            <h4 className={"footer-title"}>Kontakt</h4>
                             <a className={"footer-link-nav"}>Link 1</a>
                             <a className={"footer-link-nav"}>Link 2</a>
                             <a className={"footer-link-nav"}>Link 3</a>

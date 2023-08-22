@@ -29,7 +29,8 @@ const Header = () => {
     return (
         <header className="header">
             <Link to="/" className="logo">
-                <img src={logoSVG} alt="Catering" />
+                {/*<img src={logoSVG} alt="Catering" />*/}
+                <p className={"company-brand"}>Company brand</p>
             </Link>
             <nav className={`navigation ${isMobile && menuOpen ? 'open' : ''}`}>
                 <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>

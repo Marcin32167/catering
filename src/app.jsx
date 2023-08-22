@@ -5,6 +5,7 @@ import Footer from '../src/components/footer.jsx';
 import Home from '../src/pages/home.jsx';
 import About from '../src/pages/about.jsx';
 import Logowanie from '../src/components/logowanie.jsx'
+import KalkulatorBmi from '../src/pages/kalkulator-bmi.jsx';
 import '../src/style/main.scss';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/logowanie" element={<Logowanie />} />
+                    <Route path="/kalkulator-bmi" element={<KalkulatorBmi />} /> {/* Zmieniony element */}
                 </Routes>
                 <Footer />
             </div>
