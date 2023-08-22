@@ -1,4 +1,8 @@
 import React from 'react';
+import facebookIcon from "../assets/facebook-b.svg";
+import instagramIcon from "../assets/instagram-b.svg";
+import linkedinIcon from "../assets/linkedin-b.svg";
+
 
 const Footer = () => {
     return (
@@ -42,17 +46,30 @@ const Footer = () => {
                 <div className={"footer-copy__box"}>
                     <p className={"p-footer__copy"}> &copy; 2023 Catering</p>
                     <div className={"social-media-wrapper-footer"}>
-                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className={"social-media-link"}>
-                            <span className={"social-media-icon"}>
-                                <img src="../assets/facebook-b.svg"/>
-                            </span>
+                        <div className={"social-dec"}>Śledź nas na:</div>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                           className={"social-media-link"}>
+                        <span className={"social-media-icon"}>
+                            <img src={linkedinIcon} alt="ikona facbook" className={"social-icon"}/>
+                        </span>
                         </a>
-
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                           className={"social-media-link"}>
+                        <span className={"social-media-icon"}>
+                            <img src={facebookIcon} alt="ikona facbook" className={"social-icon"}/>
+                        </span>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                           className={"social-media-link"}>
+                        <span className={"social-media-icon"}>
+                            <img src={instagramIcon} alt="ikona facbook" className={"social-icon"}/>
+                        </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </footer>
-);
+    );
 };
 
 export default Footer;
