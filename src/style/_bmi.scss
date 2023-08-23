@@ -1,5 +1,5 @@
 .container.box-padding {
-  padding: 100px 0px 100px 0px;
+  padding: 100px 0 100px 0;
 }
 .bmi-holder {
   display: flex;
@@ -27,7 +27,6 @@
   font-family: "Poppins Light", sans-serif;
   font-size: 1rem;
   color: $red;
-  text-align: left;
   border: 1px solid #dde7fa;
   border-radius: 6px;
   padding: 20px;
@@ -65,7 +64,6 @@
 }
 
 .area-input button {
-  color: $white;
   letter-spacing: 2px;
   text-transform: uppercase;
   background-color: rgba(221, 231, 250, 1);

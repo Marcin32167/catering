@@ -1,5 +1,14 @@
 @import "colors";
 
+.container-header {
+  width: 100%;
+  max-width: 1366px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .logo {
   width: 200px;

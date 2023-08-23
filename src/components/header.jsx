@@ -28,6 +28,7 @@ const Header = () => {
 
     return (
         <header className="header">
+            <div className={"container-header"}>
             <Link to="/" className="logo">
                 {/*<img src={logoSVG} alt="Catering" />*/}
                 <p className={"company-brand"}>Company brand</p>
@@ -51,6 +52,7 @@ const Header = () => {
                     <button className={"btn-cta"}>zamów online</button>
                 </ul>
             </nav>
+            </div>
         </header>
     );
 };

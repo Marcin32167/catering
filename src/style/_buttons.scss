@@ -1,5 +1,4 @@
 .btn-cta {
-  color: $white;
   letter-spacing: 2px;
   text-transform: uppercase;
   background-color: rgba(221, 231, 250, 1);
@@ -16,7 +15,6 @@
 }
 
 .btn-client {
-  color: $white;
   letter-spacing: 2px;
   text-transform: uppercase;
   background-color: rgba(221, 231, 250, 1);
@@ -41,7 +39,6 @@
 }
 
 .btn-buy {
-  color: $white;
   letter-spacing: 0.063rem;
   background-color: $black;
   color: $white;
@@ -49,6 +46,22 @@
   border-radius: 40px;
   padding: 12px 25px;
   font-family: "Poppins" , sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.login-submit {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: rgba(221, 231, 250, 1);
+  color: $secondary;
+  border: 1px solid $border-cta;
+  border-radius: 40px;
+  padding: 12px 25px;
+  font-family: "Poppins SemiBold" , sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
