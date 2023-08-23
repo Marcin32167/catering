@@ -4,7 +4,12 @@ import standardImage from '../assets/standard.jpeg';
 import vegeImage from '../assets/vege.jpeg';
 import activeImage from '../assets/active.jpeg';
 
-const Home = () => {
+const Home = (props) => {
+
+    const handleAddToCart = () => {
+        props.updateCartItemCount();
+    };
+
     return (
         <div>
             <section className="hero-section">
@@ -25,7 +30,7 @@ const Home = () => {
                                 <h3 className={"heading-desc"}>Standard</h3>
                                 <p className={"p-box__desc"}>Zdrowa i w pełni zbilansowana dieta, bogata w niezbędne składniki mineralne, witaminy i błonnik pokarmowy.</p>
                                 <div className={"btn-price__wrapper"}>
-                                    <button className={"btn-buy"}>Zamawiam</button>
+                                    <button className={"btn-buy"} onClick={handleAddToCart}>Zamawiam</button>
                                     <p className={"title-price"}>od 60 zł</p>
                                 </div>
                             </div>
@@ -36,7 +41,7 @@ const Home = () => {
                                 <h3 className={"heading-desc"}>Vege</h3>
                                 <p className={"p-box__desc"}>Zdrowa i w pełni zbilansowana dieta, bogata w niezbędne składniki mineralne, witaminy i błonnik pokarmowy.</p>
                                 <div className={"btn-price__wrapper"}>
-                                    <button className={"btn-buy"}>Zamawiam</button>
+                                    <button className={"btn-buy"} onClick={handleAddToCart}>Zamawiam</button>
                                     <p className={"title-price"}>od 80 zł</p>
                                 </div>
                             </div>
@@ -47,7 +52,7 @@ const Home = () => {
                                 <h3 className={"heading-desc"}>Active</h3>
                                 <p className={"p-box__desc"}>Zdrowa i w pełni zbilansowana dieta, bogata w niezbędne składniki mineralne, witaminy i błonnik pokarmowy.</p>
                                 <div className={"btn-price__wrapper"}>
-                                    <button className={"btn-buy"}>Zamawiam</button>
+                                    <button className={"btn-buy"} onClick={handleAddToCart}>Zamawiam</button>
                                     <p className={"title-price"}>od 100 zł</p>
                                 </div>
                             </div>

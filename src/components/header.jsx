@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logoSVG from '../assets/brand.svg';
 import cartSVG from '../assets/cart-bag.svg';
 
-const Header = () => {
+const Header = (props) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -48,11 +48,10 @@ const Header = () => {
                             <button className={"btn-client"}>panel klienta</button>
                         </Link>
                         <button className={"btn-cta"}>zamów online</button>
-                        {/* Przycisk koszyka jako div */}
                         <div className="cart-icon">
                             <img src={cartSVG} alt="Cart"/>
                             <p className={"cart-title"}>koszyk</p>
-                            <p className={"cart-counter"}>0</p>
+                            <p className={"cart-counter"}>{props.cartItemCount}</p>
                         </div>
                     </ul>
                 </nav>

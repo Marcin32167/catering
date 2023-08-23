@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from '../src/components/header.jsx';
 import Footer from '../src/components/footer.jsx';
@@ -9,12 +9,18 @@ import KalkulatorBmi from '../src/pages/kalkulator-bmi.jsx';
 import '../src/style/main.scss';
 
 function App() {
+    const [cartItemCount, setCartItemCount] = useState(0);
+
+    const updateCartItemCount = () => {
+        setCartItemCount(prevCount => prevCount + 1);
+    };
+
     return (
         <Router>
             <div className="App">
-                <Header />
+                <Header cartItemCount={cartItemCount} />
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home updateCartItemCount={updateCartItemCount} />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/logowanie" element={<Logowanie />} />
                     <Route path="/kalkulator-bmi" element={<KalkulatorBmi />} /> {/* Zmieniony element */}
