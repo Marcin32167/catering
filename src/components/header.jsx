@@ -39,16 +39,19 @@ const Header = (props) => {
                     </div>
                     <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
                         <li className="nav-item">
-                            <Link to="/" onClick={toggleMenu}>Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/about" onClick={toggleMenu}>About</Link>
+                            <Link to="/about">About</Link>
                         </li>
-                        <Link to="/logowanie" onClick={toggleMenu}>
+                        <li className="nav-item">
+                            <Link to="/zamowienie">Zamówienie</Link>
+                        </li>
+                        <Link to="/logowanie">
                             <button className={"btn-client"}>panel klienta</button>
                         </Link>
                         <button className={"btn-cta"}>zamów online</button>
-                        <div className="cart-icon">
+                        <div className="cart-icon" onClick={props.toggleCart}>
                             <img src={cartSVG} alt="Cart"/>
                             <p className={"cart-title"}>koszyk</p>
                             <p className={"cart-counter"}>{props.cartItemCount}</p>

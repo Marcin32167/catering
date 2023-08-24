@@ -75,3 +75,20 @@
   font-size: 1.5rem;
   color: $black;
 }
+
+.btn-close__cart-popup {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: rgba(221, 231, 250, 1);
+  color: $secondary;
+  border: 1px solid $border-cta;
+  border-radius: 40px;
+  padding: 12px 25px;
+  font-family: "Poppins SemiBold" , sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: all .2s;
+  cursor: pointer;
+  align-self: end;
+}
