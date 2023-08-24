@@ -85,6 +85,11 @@
   transition: all .2s;
 }
 
+.btn-city.active {
+  background-color: $white;
+  transition: all .2s;
+}
+
 .btn-zamow {
   letter-spacing: 0.5px;
   text-transform: lowercase;
@@ -107,6 +112,11 @@
 }
 
 .btn-zamow:focus {
+  background-color: $white;
+  transition: all .2s;
+}
+
+.btn-zamow.active {
   background-color: $white;
   transition: all .2s;
 }

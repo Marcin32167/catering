@@ -6,6 +6,65 @@ import menuVege from '../assets/vege-menu.jpg';
 import menuActive from '../assets/active-menu.jpg';
 
 
+const Calendar = ({ selectedDate, onChange, isNextMonth }) => {
+    const currentDate = new Date();
+    const initialDisplayedDate = isNextMonth
+        ? new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 1)
+        : selectedDate;
+
+    const [displayedDate, setDisplayedDate] = useState(initialDisplayedDate);
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
+    const currentDay = currentDate.getDate();
+
+    const daysInMonth = new Date(displayedDate.getFullYear(), displayedDate.getMonth() + 1, 0).getDate();
+    const startDay = new Date(displayedDate.getFullYear(), displayedDate.getMonth(), 1).getDay();
+    const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+
+    const prevMonth = () => {
+        setDisplayedDate(new Date(displayedDate.getFullYear(), displayedDate.getMonth() - 1, 1));
+    };
+
+    const nextMonth = () => {
+        setDisplayedDate(new Date(displayedDate.getFullYear(), displayedDate.getMonth() + 1, 1));
+    };
+
+    return (
+        <div className="calendar">
+            <div className="calendar-header">
+                <button className="calendar-nav-btn" onClick={prevMonth}>&lt;</button>
+                <h3>{displayedDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</h3>
+                <button className="calendar-nav-btn" onClick={nextMonth}>&gt;</button>
+            </div>
+            <div className="days">
+                <div className="day">Pon.</div>
+                <div className="day">Wt.</div>
+                <div className="day">Śr.</div>
+                <div className="day">Czw.</div>
+                <div className="day">Pt.</div>
+                <div className="day">Sb.</div>
+                <div className="day">Niedz.</div>
+                {Array.from({ length: startDay }, (_, i) => <div key={`empty-${i}`} className="empty-day"></div>)}
+                {days.map(day => {
+                    const isPastDay =
+                        displayedDate.getMonth() === currentMonth && displayedDate.getFullYear() === currentYear && day < currentDay;
+                    return (
+                        <div
+                            key={day}
+                            className={`day ${day === selectedDate.getDate() && displayedDate.getMonth() === selectedDate.getMonth() ? 'selected' : ''} ${isPastDay ? 'past-day' : ''}`}
+                            onClick={() => !isPastDay && onChange(new Date(displayedDate.getFullYear(), displayedDate.getMonth(), day))}
+                        >
+                            {day}
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    );
+};
+
+
+
 const Zamowienie = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [selectedCity, setSelectedCity] = useState(null);
@@ -16,8 +75,8 @@ const Zamowienie = () => {
     const [menuChosen, setMenuChosen] = useState(false);
     const [selectedCalories, setSelectedCalories] = useState(null);
     const [caloriesChosen, setCaloriesChosen] = useState(false);
-
-
+    const [selectedDate, setSelectedDate] = useState(new Date()); // Add this line
+    const [selectedDate2, setSelectedDate2] = useState(new Date());
 
 
     const handleCitySelection = (city) => {
@@ -67,11 +126,25 @@ const Zamowienie = () => {
                         </div>
                         <h2 className={"step-title"}>wybierz miasto</h2>
                         <div className={"btns-wrapper__first-step"}>
-                            <button className={"btn-city"} onClick={() => handleCitySelection('Warszawa')}>warszawa
+                            <button
+                                className={`btn-city ${selectedCity === 'Warszawa' ? 'active' : ''}`}
+                                onClick={() => handleCitySelection('Warszawa')}>warszawa
                             </button>
-                            <button className={"btn-city"} onClick={() => handleCitySelection('Gdańsk')}>gdańsk
+                            <button
+                                className={`btn-city ${selectedCity === 'Gdańsk' ? 'active' : ''}`}
+                                onClick={() => handleCitySelection('Gdańsk')}>gdańsk
                             </button>
-                            <button className={"btn-city"} onClick={() => handleCitySelection('Kraków')}>kraków
+                            <button
+                                className={`btn-city ${selectedCity === 'Kraków' ? 'active' : ''}`}
+                                onClick={() => handleCitySelection('Kraków')}>kraków
+                            </button>
+                            <button
+                                className={`btn-city ${selectedCity === 'Bielsk Podlaski' ? 'active' : ''}`}
+                                onClick={() => handleCitySelection('Bielsk Podlaski')}>bielsk podlaski
+                            </button>
+                            <button
+                                className={`btn-city ${selectedCity === 'Klejniki' ? 'active' : ''}`}
+                                onClick={() => handleCitySelection('Klejnik')}>Klejniki
                             </button>
                         </div>
                     </div>
@@ -90,7 +163,11 @@ const Zamowienie = () => {
                                 <p className={"menu-p__desc line"}>- Kilka dań do wyboru w ramach posiłku <br></br> -
                                     Możliwość zmiany przy zamówieniu i w
                                     każdym momencie w panelu klienta <br></br> - Darmowe wymiany w cenie</p>
-                                <button className={"btn-zamow"} onClick={() => handleProgramMenuSelection('Wybór menu')}>wybierz program</button>
+                                <button
+                                    className={`btn-zamow ${selectedProgram === 'Wybór menu' ? 'active' : ''}`}
+                                    onClick={() => handleProgramMenuSelection('Wybór menu')}>
+                                    wybierz program
+                                </button>
                             </div>
                             <div className={"menu-col1"}>
                                 <img src={iconMenu} alt="Standard" className="menu-option-image"/>
@@ -98,7 +175,11 @@ const Zamowienie = () => {
                                 <p className={"menu-p__desc"}>- NOWOŚĆ! Lunch - pełnowartościowe gotowe do podgrzania
                                     posiłki z dostawą prosto pod Twoje drzwi <br></br> - Aż 17 zbilansowanych diet do
                                     wyboru <br></br> - Diety przygotowane przez najlepszych dietetyków SuperMenu</p>
-                                <button className={"btn-zamow"} onClick={() => handleProgramMenuSelection('Standardowe menu')}>wybierz program</button>
+                                <button
+                                    className={`btn-zamow ${selectedProgram === 'Standardowe menu' ? 'active' : ''}`}
+                                    onClick={() => handleProgramMenuSelection('Standardowe menu')}>
+                                    wybierz program
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -118,7 +199,10 @@ const Zamowienie = () => {
                                     zbilansowanych
                                     posiłków w super cenie! Jeśli chcesz utrzymać piękną sylwetkę i jednocześnie zdrowo
                                     się odżywiać to dieta idealna dla Ciebie!</p>
-                                <button className={"btn-zamow"} onClick={() => handleMenuSelection('Standard')}>wybierz</button>
+                                <button
+                                    className={`btn-zamow ${selectedMenu === 'Standard' ? 'active' : ''}`}
+                                    onClick={() => handleMenuSelection('Standard')}>wybierz
+                                </button>
                                 <a className={"menu-more__desc"}>zobacz menu i opis</a>
                             </div>
                             <div className={"menu-col1"}>
@@ -131,20 +215,27 @@ const Zamowienie = () => {
                                     przetwory sojowe (np. tofu), soczewicę, ciecierzycę, groch i fasolę. Coraz więcej
                                     osób decyduje się na rezygnację z mięsa zamawiając dietę wegetariańską, ale weganizm
                                     również zaczyna być bardzo popularnym sposobem odżywiania.</p>
-                                <button className={"btn-zamow"} onClick={() => handleMenuSelection('Vege')}>wybierz</button>
+                                <button
+                                    className={`btn-zamow ${selectedMenu === 'Vege' ? 'active' : ''}`}
+                                    onClick={() => handleMenuSelection('Vege')}>wybierz
+                                </button>
                                 <a className={"menu-more__desc"}>zobacz menu i opis</a>
                             </div>
                             <div className={"menu-col1"}>
                                 <img src={menuActive} alt="Standard" className="menu-image"/>
                                 <p className={"menu-desc"}>Active</p>
-                                <p className={"menu-p__desc line-clamp"}>Cateringi dietetyczne stworzyły specjalną opcję dla osób,
+                                <p className={"menu-p__desc line-clamp"}>Cateringi dietetyczne stworzyły specjalną opcję
+                                    dla osób,
                                     które są aktywne fizycznie. Dzięki prawidłowemu odżywieniu możliwe jest osiąganie
                                     lepszych wyników sportowych, bardziej efektywnej regeneracji mięśni i utrzymaniu
                                     odpowiedniej sylwetki. Gdy podejmujemy się intensywnego wysiłku, takiego jak np.
                                     ciężkie treningi siłowe, długodystansowy bieg, czy wielogodzinna jazda na rowerze,
                                     to warto przygotować swój organizm, abyśmy byli w stanie wykonać swoje cele z dobrym
                                     samopoczuciem.</p>
-                                <button className={"btn-zamow"} onClick={() => handleMenuSelection('Active')}>wybierz</button>
+                                <button
+                                    className={`btn-zamow ${selectedMenu === 'Active' ? 'active' : ''}`}
+                                    onClick={() => handleMenuSelection('Active')}>wybierz
+                                </button>
                                 <a className={"menu-more__desc"}>zobacz menu i opis</a>
                             </div>
                         </div>
@@ -158,12 +249,19 @@ const Zamowienie = () => {
                         </div>
                         <h2 className={"step-title"}>wybierz kaloryczność</h2>
                         <div className={"btns-wrapper__first-step"}>
-                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('1250')}>1250</button>
-                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('1500')}>1500</button>
-                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('1750')}>1750</button>
-                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('2000')}>2000</button>
-                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('2500')}>2500</button>
-                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('Dopasuj!')}>dopasuj!</button>
+                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('1250')}>1250
+                            </button>
+                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('1500')}>1500
+                            </button>
+                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('1750')}>1750
+                            </button>
+                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('2000')}>2000
+                            </button>
+                            <button className={"btn-calories"} onClick={() => handleCaloriesSelection('2500')}>2500
+                            </button>
+                            <button className={"btn-calories"}
+                                    onClick={() => handleCaloriesSelection('Dopasuj!')}>dopasuj!
+                            </button>
                         </div>
                     </div>
                 );
@@ -173,9 +271,12 @@ const Zamowienie = () => {
                         <div className={"checkbox-order"}>
                             <img src={checkBox} alt="Standard" className="checkbox-image"/>
                         </div>
-                        <h2 className={"step-title"}>Następny krok</h2>
+                        <h2 className={"step-title"}>Szczegóły zamówienia</h2>
                         <div className={"btns-wrapper__first-step"}>
-                            <button className={"btn-calories"}>Dalej</button>
+                            <div className="calendar-wrapper">
+                                <Calendar selectedDate={selectedDate} onChange={setSelectedDate} />
+                                <Calendar selectedDate={selectedDate2} onChange={setSelectedDate2} isNextMonth={true} />
+                            </div>
                         </div>
                     </div>
                 );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import videoPath from '../assets/bg-video.webm';
 import standardImage from '../assets/standard.jpeg';
 import vegeImage from '../assets/vege.jpeg';
@@ -21,7 +22,7 @@ const Home = (props) => {
                     <div className="cart-popup">
                         <div className={"cart-popup__text-holder"}>
                         <p className={"cart-popup__title"}>Razem: </p>
-                        <p className={"cart-amount"}>0</p>
+                            <p className={"cart-amount"}>{props.cartItemCount}</p>
                         </div>
                         <button className={"btn-close__cart-popup"}>zamknij</button>
                     </div>
@@ -46,6 +47,9 @@ const Home = (props) => {
                                 <p className={"p-box__desc"}>Zdrowa i w pełni zbilansowana dieta, bogata w niezbędne składniki mineralne, witaminy i błonnik pokarmowy.</p>
                                 <div className={"btn-price__wrapper"}>
                                     <button className={"btn-buy"} onClick={handleAddToCart}>Zamawiam</button>
+                                    <Link to="/zamowienie">
+                                    <button className={"btn-buy"}>Zamawiam</button>
+                                    </Link>
                                     <p className={"title-price"}>od 60 zł</p>
                                 </div>
                             </div>
