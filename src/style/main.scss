@@ -5,6 +5,8 @@
 @import "buttons";
 @import "bmi";
 @import "logowanie";
+@import "zamowienie";
+
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +32,12 @@ section {
   margin: auto;
 }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 
 

@@ -1,3 +1,6 @@
+@import "colors";
+
+
 .hero-section {
   position: relative;
 }
@@ -42,7 +45,6 @@
   background-image: linear-gradient(to top, rgba(248, 251, 255, .9), $white);
   border: 1px solid $white;
   border-radius: 4px;
-  box-sizing: border-box;
   overflow: hidden;
 
 }

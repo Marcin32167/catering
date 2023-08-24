@@ -4,7 +4,7 @@ import Header from '../src/components/header.jsx';
 import Footer from '../src/components/footer.jsx';
 import Home from '../src/pages/home.jsx';
 import About from '../src/pages/about.jsx';
-import Zamowienie from "../src/pages/zamowienie.jsx";
+import Zamowienie from '../src/pages/zamowienie.jsx';
 import Logowanie from '../src/components/logowanie.jsx';
 import KalkulatorBmi from '../src/pages/kalkulator-bmi.jsx';
 import '../src/style/main.scss';
@@ -28,7 +28,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home updateCartItemCount={updateCartItemCount} cartVisible={cartVisible} toggleCart={toggleCart} />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/about" element={<Zamowienie />} />
+                    <Route path="/zamowienie" element={<Zamowienie />} />
                     <Route path="/logowanie" element={<Logowanie />} />
                     <Route path="/kalkulator-bmi" element={<KalkulatorBmi />} /> {/* Zmieniony element */}
                 </Routes>
