@@ -22,7 +22,7 @@ const Home = (props) => {
                     <div className="cart-popup">
                         <div className={"cart-popup__text-holder"}>
                         <p className={"cart-popup__title"}>Razem: </p>
-                            <p className={"cart-amount"}>{props.cartItemCount}</p>
+                            <p className={"cart-amount"}>0</p>
                         </div>
                         <button className={"btn-close__cart-popup"}>zamknij</button>
                     </div>

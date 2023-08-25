@@ -3,8 +3,13 @@
 .calendar-wrapper {
   width: 100%;
   display: flex;
-  gap: 50px;
+  gap: 30px;
   justify-content: left;
+  align-items: flex-end;
+  @media screen and (max-width: 1366px) {
+    flex-wrap: wrap;
+  }
+
 
   .calendar {
     background-color: $white;
@@ -18,6 +23,7 @@
       justify-content: space-between;
       padding: 10px;
       background-color: $white;
+      color: $black;
       font-family: "Poppins Medium", sans-serif;
 
       .calendar-nav-btn {
@@ -44,6 +50,7 @@
       .day.day-header {
         border: none;
         cursor: text;
+        color: $black;
       }
       .day.day-header:hover {
         background-color: $white;
@@ -61,6 +68,7 @@
         transition: background,border .2s ease-out;
         font-family: "Poppins SemiBold", sans-serif;
         height: 65px;
+        color: $black;
 
 
         &.selected {

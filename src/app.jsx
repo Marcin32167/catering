@@ -8,6 +8,7 @@ import Zamowienie from '../src/pages/zamowienie.jsx';
 import Logowanie from '../src/components/logowanie.jsx';
 import KalkulatorBmi from '../src/pages/kalkulator-bmi.jsx';
 import '../src/style/main.scss';
+import WaterCalculator from "./pages/kalkulator-wody.jsx";
 
 function App() {
     const [cartItemCount, setCartItemCount] = useState(0);
@@ -30,7 +31,8 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/zamowienie" element={<Zamowienie />} />
                     <Route path="/logowanie" element={<Logowanie />} />
-                    <Route path="/kalkulator-bmi" element={<KalkulatorBmi />} /> {/* Zmieniony element */}
+                    <Route path="/kalkulator-bmi" element={<KalkulatorBmi />} />
+                    <Route path="/kalkulator-wody" element={<WaterCalculator />} />
                 </Routes>
                 <Footer />
             </div>

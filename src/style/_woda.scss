@@ -1,16 +1,16 @@
 @import "colors";
 
-
 .container.box-padding {
   padding: 100px 0 100px 0;
 }
-.bmi-holder {
+
+.water-calculator-holder {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.heading-title__bmi {
+.heading-title__water-calculator {
   font-family: "Poppins Medium", sans-serif;
   font-size: 2.188rem;
   line-height: 1.5;
@@ -19,7 +19,7 @@
   padding: 0 0 15px 0;
 }
 
-.bmi-desc {
+.water-calculator-desc {
   font-family: "Poppins Light", sans-serif;
   font-size: 1rem;
   text-align: left;
@@ -39,31 +39,33 @@
 }
 
 .area-input {
-  width: 100%;
-  max-width: 600px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.area-input input {
+.area-input select {
   background-color: rgba(221, 231, 250, 1);
-  color: #202020;
+  color: $secondary;
   font-size: 16px;
   height: 46px;
   width: 100%;
   margin-bottom: 12px;
-  padding: 20px;
+  padding: 0 17px;
   border: none;
   border-radius: 6px;
   transition: all ease 0.2s;
 }
 
-.area-input input::placeholder {
+.area-input input::placeholder,
+.area-input select option,
+.area-input select::placeholder {
   color: $secondary;
 }
 
-.area-input input:hover {
+.area-input input:hover,
+.area-input select:hover {
   background-color: rgba(221, 231, 250, 1);
 }
 
@@ -75,20 +77,17 @@
   border: 1px solid $border-cta;
   border-radius: 40px;
   padding: 12px 25px;
-  font-family: "Poppins SemiBold" , sans-serif;
+  font-family: "Poppins SemiBold", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
-  transition: all .2s;
+  transition: all 0.2s;
   cursor: pointer;
   width: 100%;
 }
 
-.bmi-answer {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  font-family: "Poppins Light", sans-serif;
+.water-calculator-answer {
+  font-family: "Poppins SemiBold", sans-serif;
   font-size: 1.5rem;
   line-height: 1.5;
   border: 1px solid #dde7fa;
@@ -98,13 +97,8 @@
   margin-top: 12px;
 }
 
-.bmi-value {
-  font-family: "Poppins SemiBold", sans-serif;
-  font-size: 2rem;
-}
-
 @media (max-width: 500px) {
   .area-input {
-    width: 300px;
+    width: 250px;
   }
 }

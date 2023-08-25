@@ -8,7 +8,7 @@ import leftArrowSvg from '../assets/arrow-left.svg';
 import rightArrowSvg from '../assets/arrow-right.svg';
 
 
-const Calendar = ({ selectedDate, onChange, isNextMonth }) => {
+const Calendar = ({selectedDate, onChange, isNextMonth}) => {
     const currentDate = new Date();
     const initialDisplayedDate = isNextMonth
         ? new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 1)
@@ -21,7 +21,7 @@ const Calendar = ({ selectedDate, onChange, isNextMonth }) => {
 
     const daysInMonth = new Date(displayedDate.getFullYear(), displayedDate.getMonth() + 1, 0).getDate();
     const startDay = new Date(displayedDate.getFullYear(), displayedDate.getMonth(), 1).getDay();
-    const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+    const days = Array.from({length: daysInMonth}, (_, i) => i + 1);
 
     const prevMonth = () => {
         setDisplayedDate(new Date(displayedDate.getFullYear(), displayedDate.getMonth() - 1, 1));
@@ -35,11 +35,11 @@ const Calendar = ({ selectedDate, onChange, isNextMonth }) => {
         <div className="calendar">
             <div className="calendar-header">
                 <button className="calendar-nav-btn" onClick={prevMonth}>
-                    <img src={leftArrowSvg} alt="Previous Month" />
+                    <img src={leftArrowSvg} alt="Previous Month"/>
                 </button>
-                <h3>{displayedDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</h3>
+                <h3>{displayedDate.toLocaleString('default', {month: 'long', year: 'numeric'})}</h3>
                 <button className="calendar-nav-btn" onClick={nextMonth}>
-                    <img src={rightArrowSvg} alt="Next Month" />
+                    <img src={rightArrowSvg} alt="Next Month"/>
                 </button>
             </div>
             <div className="days">
@@ -50,7 +50,7 @@ const Calendar = ({ selectedDate, onChange, isNextMonth }) => {
                 <div className="day day-header">Pt.</div>
                 <div className="day day-header">Sb.</div>
                 <div className="day day-header">Niedz.</div>
-                {Array.from({ length: startDay }, (_, i) => <div key={`empty-${i}`} className="empty-day"></div>)}
+                {Array.from({length: startDay}, (_, i) => <div key={`empty-${i}`} className="empty-day"></div>)}
                 {days.map(day => {
                     const isPastDay =
                         displayedDate.getMonth() === currentMonth && displayedDate.getFullYear() === currentYear && day < currentDay;
@@ -68,7 +68,6 @@ const Calendar = ({ selectedDate, onChange, isNextMonth }) => {
         </div>
     );
 };
-
 
 
 const Zamowienie = () => {
@@ -282,8 +281,11 @@ const Zamowienie = () => {
                         <p className={"oder-desc__test"}>Dodatkowe funkcjonalności kalendarza.</p>
                         <div className={"btns-wrapper__first-step"}>
                             <div className="calendar-wrapper">
-                                <Calendar selectedDate={selectedDate} onChange={setSelectedDate} />
-                                <Calendar selectedDate={selectedDate2} onChange={setSelectedDate2} isNextMonth={true} />
+                                <Calendar selectedDate={selectedDate} onChange={setSelectedDate}/>
+                                <Calendar selectedDate={selectedDate2} onChange={setSelectedDate2} isNextMonth={true}/>
+                                <div>
+                                <button className="btn-go__next">Przejdź dalej</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -301,6 +303,7 @@ const Zamowienie = () => {
 
     return (
         <div className="page">
+            <section className={"section-padding"}>
             <div className="container box-padding">
                 <div className={"order-main__wrapper"}>
                     <h1 className={"order-title"}>Zamówienie</h1>
@@ -311,6 +314,7 @@ const Zamowienie = () => {
                     ))}
                 </div>
             </div>
+            </section>
         </div>
     );
 };
