@@ -23,6 +23,10 @@ footer {
   grid-template-columns: .3fr .7fr;
   grid-auto-columns: 1fr;
   margin-bottom: 50px;
+  @media screen and (max-width: 992px) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 50px;
+  }
 }
 
 .footer-3-col {
@@ -32,6 +36,10 @@ footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
   display: grid;
+  @media screen and (max-width: 992px) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+  }
 }
 
 .footer-card {
@@ -41,6 +49,9 @@ footer {
   display: flex;
   flex-direction: column;
   justify-self: end;
+  @media screen and (max-width: 992px) {
+    justify-self: start;
+  }
 }
 
 .footer-title {

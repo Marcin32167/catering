@@ -8,6 +8,7 @@ import {Link} from "react-router-dom";
 const Footer = () => {
     return (
         <footer>
+            <section className={"section-padding"}>
             <div className={"footer-wrapper"}>
                 <div className={"footer-holder"}>
                     <div className={"footer-col"}>
@@ -69,6 +70,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            </section>
         </footer>
     );
 };

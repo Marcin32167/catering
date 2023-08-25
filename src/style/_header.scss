@@ -28,6 +28,9 @@
   box-shadow: 0 2px 20px rgba(44, 62, 154, .05);
   top: 0;
   position: sticky;
+  @media screen and (max-width: 768px) {
+    padding: 12px;
+  }
 
   h1 {
     margin: 0;

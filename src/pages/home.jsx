@@ -34,7 +34,7 @@ const Home = (props) => {
                     <source src={videoPath} type="video/webm" />
                 </video>
             </section>
-            <section>
+            <section className={"section-padding"}>
                 <div className="container box-padding">
                     <div className="heading-wrapper">
                         <h2 className="heading-second">Wybierz odpowiednią dietę dla Ciebie</h2>

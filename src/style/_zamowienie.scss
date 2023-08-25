@@ -1,6 +1,5 @@
 @import "colors";
 
-
 .order-main__wrapper {
   display: flex;
   flex-direction: column;
@@ -195,4 +194,18 @@
 .btn-calories:focus {
   background-color: $white;
   transition: all .2s;
+}
+
+.oder-desc {
+  font-family: "Poppins Light", sans-serif;
+  font-size: 1rem;
+  color: #62748c;
+  margin-bottom: 15px;
+}
+
+.oder-desc__test {
+  font-family: "Poppins Light", sans-serif;
+  font-size: 1rem;
+  color: #62748c;
+  margin-bottom: 50px;
 }
