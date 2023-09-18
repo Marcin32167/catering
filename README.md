@@ -1,6 +1,5 @@
 # Project Catering
 
-A brief description of what this project does and who it's for
 ## Author
 [Marcin Adamiuk](https://github.com/Marcin32167)
 ## Live demo
@@ -9,7 +8,7 @@ A brief description of what this project does and who it's for
 A catering application that allows you to select a menu and order it. It also allows the user to log in to their account, mini basket or calculators for calculating e.g. BMI or water level.
 The project is still in progress.
 ## Build with
-* React js
+* React.js
 * SCSS
 * HTML 5
 * Local Storage
