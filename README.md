@@ -1,8 +1,17 @@
-# React + Vite
+# Project Catering
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A brief description of what this project does and who it's for
+## Author
+[Marcin Adamiuk](https://github.com/Marcin32167)
+## Live demo
+[Project link - https://projectcatering.netlify.app/](https://projectcatering.netlify.app/)
+## About the project
+A catering application that allows you to select a menu and order it. It also allows the user to log in to their account, mini basket or calculators for calculating e.g. BMI or water level.
+The project is still in progress.
+## Build with
+* React js
+* SCSS
+* HTML 5
+* Local Storage
+## MIT License
+Copyright © 2023 Marcin Adamiuk. All rights reserved.
