@@ -3,7 +3,7 @@
 ## Author
 [Marcin Adamiuk](https://github.com/Marcin32167)
 ## Live demo
-[Project link - https://projectcatering.netlify.app/](https://projectcatering.netlify.app/)
+[Project link - https://project-catering.netlify.app/](https://project-catering.netlify.app/)
 ## About the project
 A catering application that allows you to select a menu and order it. It also allows the user to log in to their account, mini basket or calculators for calculating e.g. BMI or water level.
 The project is still in progress.
