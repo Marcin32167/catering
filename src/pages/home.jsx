@@ -47,9 +47,6 @@ const Home = (props) => {
                                 <p className={"p-box__desc"}>Zdrowa i w pełni zbilansowana dieta, bogata w niezbędne składniki mineralne, witaminy i błonnik pokarmowy.</p>
                                 <div className={"btn-price__wrapper"}>
                                     <button className={"btn-buy"} onClick={handleAddToCart}>Zamawiam</button>
-                                    <Link to="/zamowienie">
-                                    <button className={"btn-buy"}>Zamawiam</button>
-                                    </Link>
                                     <p className={"title-price"}>od 60 zł</p>
                                 </div>
                             </div>
