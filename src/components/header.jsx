@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logoSVG from '../assets/brand.svg';
 import cartSVG from '../assets/cart-bag.svg';
 
@@ -24,40 +24,53 @@ const Header = (props) => {
         setMenuOpen(!menuOpen);
     };
 
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
     return (
         <header className="header">
-            <div className={"container-header"}>
+            <div className={"container__header"}>
                 <Link to="/" className="logo">
-                    {/*<img src={logoSVG} alt="Catering" />*/}
-                    <p className={"company-brand"}>Company brand</p>
+                    <p className={"company-brand"}>Brand</p>
                 </Link>
-                <nav className={`navigation ${isMobile && menuOpen ? 'open' : ''}`}>
-                    <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                    </div>
-                    <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
-                        <li className="nav-item">
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/zamowienie">Zamówienie</Link>
-                        </li>
+                <div className="wrapper__nav">
+                    <div className="wrapper__btns--nav">
                         <Link to="/logowanie">
-                            <button className={"btn-client"}>panel klienta</button>
+                            <button className={"btn__secondary"}>panel klienta</button>
                         </Link>
-                        <button className={"btn-cta"}>zamów online</button>
-                        <div className="cart-icon" onClick={props.toggleCart}>
-                            <img src={cartSVG} alt="Cart"/>
-                            <p className={"cart-title"}>koszyk</p>
-                            <p className={"cart-counter"}>{props.cartItemCount}</p>
+                        <Link to="/zamowienie">
+                            <button className={"btn__main"}>zamawiam</button>
+                        </Link>
+                        <button className="btn__cart" onClick={props.toggleCart}>
+                            <img className="img__cart" src={cartSVG} alt="Cart"/>
+                            <p className={"cart__title"}>koszyk</p>
+                            <p className={"cart__counter"}>{props.cartItemCount}</p>
+                        </button>
+                    </div>
+                    <nav className={`navigation ${isMobile && menuOpen ? 'open' : ''}`}>
+                        <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
                         </div>
-                    </ul>
-                </nav>
+                        <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
+                            <li className="nav-item">
+                                <NavLink to="/" exact activeClassName="active" onClick={closeMenu}>
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink to="/about" activeClassName="active" onClick={closeMenu}>
+                                    About
+                                </NavLink>
+                            </li>
+                            <Link to="/logowanie">
+                                <button className={"btn__secondary"}>panel klienta</button>
+                            </Link>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
     );

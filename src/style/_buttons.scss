@@ -1,14 +1,104 @@
 @import "colors";
 
-.btn-cta {
+.btn__main {
   letter-spacing: 2px;
   text-transform: uppercase;
   background-color: rgba(221, 231, 250, 1);
   color: $secondary;
-  border: 1px solid $border-cta;
+  border: 0.063rem solid $btn-border;
+  border-radius: 2.5rem;
+  padding: 0.75rem 1.563rem;
+  font-family: "Poppins SemiBold" , sans-serif;
+  font-size: $btn-main-font;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: all .2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $btn-bgc;
+    color: $btn-text-hover;
+  }
+  @media screen and (max-width: 992px) {
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+.btn__secondary {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: $white;
+  color: $secondary;
+  border: 0.063rem solid $btn-border;
+  border-radius: 2.5rem;
+  padding: 0.75rem 1.563rem;
+  font-family: "Poppins SemiBold" , sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: all .2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $btn-bgc;
+    color: $btn-text-hover;
+  }
+  @media screen and (max-width: 992px) {
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+.nav-item a {
+  padding: 0.75rem 0.781rem;
+
+  @media screen and (max-width: 992px) {
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+.btn__cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(221, 231, 250, 1);
+  color: $secondary;
+  border: 1px solid $btn-border;
   border-radius: 40px;
+  padding: 0 1.563rem;
+  font-family: "Poppins SemiBold", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  .img__cart {
+
+  }
+
+  .cart__title {
+    margin: 0;
+  }
+
+  .cart__counter {
+    display: flex;
+    align-items: center;
+    padding: 2px 13px;
+    background-color: $white;
+    border-radius: 11px;
+  }
+}
+
+.btn-city {
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  background-color: rgba(221, 231, 250, 1);
+  color: $secondary;
+  border: 1px solid $btn-border;
+  border-radius: 6px;
   padding: 12px 25px;
-  margin-right: 20px;
   font-family: "Poppins SemiBold" , sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -17,13 +107,28 @@
   cursor: pointer;
 }
 
-.btn-client {
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.btn-city:hover {
+  background-color: $white;
+  transition: all .2s;
+}
+
+.btn-city:focus {
+  background-color: $white;
+  transition: all .2s;
+}
+
+.btn-city.active {
+  background-color: $white;
+  transition: all .2s;
+}
+
+.btn-zamow {
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
   background-color: rgba(221, 231, 250, 1);
   color: $secondary;
-  border: 1px solid $border-cta;
-  border-radius: 40px;
+  border: 1px solid $btn-border;
+  border-radius: 6px;
   padding: 12px 25px;
   font-family: "Poppins SemiBold" , sans-serif;
   font-size: 14px;
@@ -31,14 +136,31 @@
   line-height: 1.5;
   transition: all .2s;
   cursor: pointer;
-  margin-right: 20px;
 }
+
+.btn-zamow:hover {
+  background-color: $white;
+  transition: all .2s;
+}
+
+.btn-zamow:focus {
+  background-color: $white;
+  transition: all .2s;
+}
+
+.btn-zamow.active {
+  background-color: $white;
+  transition: all .2s;
+}
+
+// to change below
+
 
 .btn-buy {
   letter-spacing: 0.063rem;
   background-color: $black;
   color: $white;
-  border: 1px solid $border-cta;
+  border: 1px solid $btn-border;
   border-radius: 40px;
   padding: 12px 25px;
   font-family: "Poppins" , sans-serif;
@@ -54,7 +176,7 @@
   text-transform: uppercase;
   background-color: rgba(221, 231, 250, 1);
   color: $secondary;
-  border: 1px solid $border-cta;
+  border: 1px solid $btn-border;
   border-radius: 40px;
   padding: 12px 25px;
   font-family: "Poppins SemiBold" , sans-serif;
@@ -76,7 +198,7 @@
   text-transform: uppercase;
   background-color: rgba(221, 231, 250, 1);
   color: $secondary;
-  border: 1px solid $border-cta;
+  border: 1px solid $btn-border;
   border-radius: 40px;
   padding: 12px 25px;
   font-family: "Poppins SemiBold" , sans-serif;
@@ -95,7 +217,7 @@
   text-transform: uppercase;
   background-color: rgba(221, 231, 250, 1);
   color: $secondary;
-  border: 1px solid $border-cta;
+  border: 1px solid $btn-border;
   border-radius: 40px;
   padding: 12px 25px;
   margin-right: 20px;

@@ -13,7 +13,7 @@
   left: -17px;
   width: 34px;
   height: 34px;
-  border: 1px solid $border-cta;
+  border: 1px solid $btn-border;
   padding: 10px;
   border-radius: 50%;
   background-color: $white;
@@ -58,67 +58,7 @@
   gap: 20px;
 }
 
-.btn-city {
-  letter-spacing: 0.5px;
-  text-transform: capitalize;
-  background-color: rgba(221, 231, 250, 1);
-  color: $secondary;
-  border: 1px solid $border-cta;
-  border-radius: 6px;
-  padding: 12px 25px;
-  font-family: "Poppins SemiBold" , sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
-  transition: all .2s;
-  cursor: pointer;
-}
 
-.btn-city:hover {
-  background-color: $white;
-  transition: all .2s;
-}
-
-.btn-city:focus {
-  background-color: $white;
-  transition: all .2s;
-}
-
-.btn-city.active {
-  background-color: $white;
-  transition: all .2s;
-}
-
-.btn-zamow {
-  letter-spacing: 0.5px;
-  text-transform: lowercase;
-  background-color: rgba(221, 231, 250, 1);
-  color: $secondary;
-  border: 1px solid $border-cta;
-  border-radius: 6px;
-  padding: 12px 25px;
-  font-family: "Poppins SemiBold" , sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
-  transition: all .2s;
-  cursor: pointer;
-}
-
-.btn-zamow:hover {
-  background-color: $white;
-  transition: all .2s;
-}
-
-.btn-zamow:focus {
-  background-color: $white;
-  transition: all .2s;
-}
-
-.btn-zamow.active {
-  background-color: $white;
-  transition: all .2s;
-}
 
 .menu-option-wrapper {
   width: 100%;
@@ -137,7 +77,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 40px;
-  border: 1px solid $border-cta;
+  border: 1px solid $btn-border;
   border-radius: 6px;
 }
 
@@ -182,7 +122,7 @@
   text-transform: capitalize;
   background-color: rgba(221, 231, 250, 1);
   color: $secondary;
-  border: 1px solid $border-cta;
+  border: 1px solid $btn-border;
   border-radius: 6px;
   padding: 12px 25px;
   font-family: "Poppins SemiBold" , sans-serif;
