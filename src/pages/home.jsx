@@ -29,7 +29,7 @@ const Home = (props) => {
                 </div>
             )}
             <section className="hero-section">
-                <h1 className="heading-main">Zasmakuj wygody z Naszym cateringiem</h1>
+                <h1 className="heading-main">Zasmakuj wygody <br></br> z Naszym cateringiem</h1>
                 <video autoPlay loop muted className="hero-video">
                     <source src={videoPath} type="video/webm" />
                 </video>
