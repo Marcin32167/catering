@@ -6,7 +6,6 @@ import vegeImage from '../assets/vege.jpeg';
 import activeImage from '../assets/active.jpeg';
 
 const Home = (props) => {
-
     const handleAddToCart = () => {
         props.updateCartItemCount();
     };
@@ -21,17 +20,17 @@ const Home = (props) => {
                 <div className="cart-overlay" onClick={props.toggleCart}>
                     <div className="cart-popup">
                         <div className={"cart-popup__text-holder"}>
-                        <p className={"cart-popup__title"}>Razem: </p>
+                            <p className={"cart-popup__title"}>Razem: </p>
                             <p className={"cart-amount"}>0</p>
                         </div>
-                        <button className={"btn-close__cart-popup"}>zamknij</button>
+                        <button className={"btn-close__cart-popup"} onClick={closeCartPopup}>zamknij</button>
                     </div>
                 </div>
             )}
             <section className="hero-section">
                 <h1 className="heading-main">Zasmakuj wygody <br></br> z Naszym cateringiem</h1>
                 <video autoPlay loop muted className="hero-video">
-                    <source src={videoPath} type="video/webm" />
+                    <source src={videoPath} type="video/webm"/>
                 </video>
             </section>
             <section className={"section-padding"}>
