@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import checkBox from '../assets/check-box-order.svg';
 import iconMenu from '../assets/icon-step-2.svg';
 import menuStandard from '../assets/standard-menu.jpg';
@@ -7,8 +7,7 @@ import menuActive from '../assets/active-menu.jpg';
 import leftArrowSvg from '../assets/arrow-left.svg';
 import rightArrowSvg from '../assets/arrow-right.svg';
 
-
-const Calendar = ({selectedDate, onChange, isNextMonth}) => {
+const Calendar = ({ selectedDate, onChange, isNextMonth }) => {
     const currentDate = new Date();
     const initialDisplayedDate = isNextMonth
         ? new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 1)
@@ -21,7 +20,7 @@ const Calendar = ({selectedDate, onChange, isNextMonth}) => {
 
     const daysInMonth = new Date(displayedDate.getFullYear(), displayedDate.getMonth() + 1, 0).getDate();
     const startDay = new Date(displayedDate.getFullYear(), displayedDate.getMonth(), 1).getDay();
-    const days = Array.from({length: daysInMonth}, (_, i) => i + 1);
+    const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
     const prevMonth = () => {
         setDisplayedDate(new Date(displayedDate.getFullYear(), displayedDate.getMonth() - 1, 1));
@@ -35,11 +34,11 @@ const Calendar = ({selectedDate, onChange, isNextMonth}) => {
         <div className="calendar">
             <div className="calendar-header">
                 <button className="calendar-nav-btn" onClick={prevMonth}>
-                    <img src={leftArrowSvg} alt="Previous Month"/>
+                    <img src={leftArrowSvg} alt="Previous Month" />
                 </button>
-                <h3>{displayedDate.toLocaleString('default', {month: 'long', year: 'numeric'})}</h3>
+                <h3>{displayedDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</h3>
                 <button className="calendar-nav-btn" onClick={nextMonth}>
-                    <img src={rightArrowSvg} alt="Next Month"/>
+                    <img src={rightArrowSvg} alt="Next Month" />
                 </button>
             </div>
             <div className="days">
@@ -50,7 +49,7 @@ const Calendar = ({selectedDate, onChange, isNextMonth}) => {
                 <div className="day day-header">Pt.</div>
                 <div className="day day-header">Sb.</div>
                 <div className="day day-header">Niedz.</div>
-                {Array.from({length: startDay}, (_, i) => <div key={`empty-${i}`} className="empty-day"></div>)}
+                {Array.from({ length: startDay }, (_, i) => <div key={`empty-${i}`} className="empty-day"></div>)}
                 {days.map(day => {
                     const isPastDay =
                         displayedDate.getMonth() === currentMonth && displayedDate.getFullYear() === currentYear && day < currentDay;
@@ -69,25 +68,20 @@ const Calendar = ({selectedDate, onChange, isNextMonth}) => {
     );
 };
 
-
 const Zamowienie = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [selectedCity, setSelectedCity] = useState(null);
-    const [cityChosen, setCityChosen] = useState(false);
     const [selectedProgram, setSelectedProgram] = useState(null);
-    const [programChosen, setProgramChosen] = useState(false);
     const [selectedMenu, setSelectedMenu] = useState(null);
-    const [menuChosen, setMenuChosen] = useState(false);
     const [selectedCalories, setSelectedCalories] = useState(null);
-    const [caloriesChosen, setCaloriesChosen] = useState(false);
-    const [selectedDate, setSelectedDate] = useState(new Date()); // Add this line
+    const [selectedDate, setSelectedDate] = useState(new Date());
     const [selectedDate2, setSelectedDate2] = useState(new Date());
 
+    // const [isButtonSelected, setIsButtonSelected] = useState(false);
 
     const handleCitySelection = (city) => {
         localStorage.setItem('selectedCity', city);
         setSelectedCity(city);
-        setCityChosen(true);
         setCurrentStep(2);
         console.log(`Wybrane miasto: ${city}`);
     };
@@ -95,7 +89,6 @@ const Zamowienie = () => {
     const handleProgramMenuSelection = (program) => {
         localStorage.setItem('selectedProgram', program);
         setSelectedProgram(program);
-        setProgramChosen(true);
         setCurrentStep(3);
         console.log(`Wybrany program: ${program}`);
     };
@@ -103,7 +96,6 @@ const Zamowienie = () => {
     const handleMenuSelection = (menu) => {
         localStorage.setItem('selectedMenu', menu);
         setSelectedMenu(menu);
-        setMenuChosen(true);
         setCurrentStep(4);
         console.log(`Wybrane menu: ${menu}`);
     };
@@ -111,15 +103,14 @@ const Zamowienie = () => {
     const handleCaloriesSelection = (calories) => {
         localStorage.setItem('selectedCalories', calories);
         setSelectedCalories(calories);
-        setCaloriesChosen(true);
         setCurrentStep(5);
         console.log(`Wybrana kaloryczność: ${calories}`);
     };
 
+    // const handleNextStep = () => {
+    //     setCurrentStep(currentStep + 1);
+    // };
 
-    const handleNextStep = () => {
-        setCurrentStep(currentStep + 1);
-    };
 
     const renderStep = (stepNumber) => {
         switch (stepNumber) {
@@ -171,7 +162,7 @@ const Zamowienie = () => {
                                 <button
                                     className={`btn-zamow ${selectedProgram === 'Wybór menu' ? 'active' : ''}`}
                                     onClick={() => handleProgramMenuSelection('Wybór menu')}>
-                                    wybierz program
+                                    {selectedProgram === 'Wybór menu' ? 'wybrany' : 'wybierz program'}
                                 </button>
                             </div>
                             <div className={"menu-col1"}>
@@ -183,7 +174,7 @@ const Zamowienie = () => {
                                 <button
                                     className={`btn-zamow ${selectedProgram === 'Standardowe menu' ? 'active' : ''}`}
                                     onClick={() => handleProgramMenuSelection('Standardowe menu')}>
-                                    wybierz program
+                                    {selectedProgram === 'Standardowe menu' ? 'wybrany' : 'wybierz program'}
                                 </button>
                             </div>
                         </div>
@@ -206,7 +197,8 @@ const Zamowienie = () => {
                                     się odżywiać to dieta idealna dla Ciebie!</p>
                                 <button
                                     className={`btn-zamow ${selectedMenu === 'Standard' ? 'active' : ''}`}
-                                    onClick={() => handleMenuSelection('Standard')}>wybierz
+                                    onClick={() => handleMenuSelection('Standard')}>
+                                    {selectedMenu === 'Standard' ? 'wybrany' : 'wybierz'}
                                 </button>
                                 <a className={"menu-more__desc"}>zobacz menu i opis</a>
                             </div>
@@ -222,7 +214,8 @@ const Zamowienie = () => {
                                     również zaczyna być bardzo popularnym sposobem odżywiania.</p>
                                 <button
                                     className={`btn-zamow ${selectedMenu === 'Vege' ? 'active' : ''}`}
-                                    onClick={() => handleMenuSelection('Vege')}>wybierz
+                                    onClick={() => handleMenuSelection('Vege')}>
+                                    {selectedMenu === 'Vege' ? 'wybrany' : 'wybierz'}
                                 </button>
                                 <a className={"menu-more__desc"}>zobacz menu i opis</a>
                             </div>
@@ -239,7 +232,8 @@ const Zamowienie = () => {
                                     samopoczuciem.</p>
                                 <button
                                     className={`btn-zamow ${selectedMenu === 'Active' ? 'active' : ''}`}
-                                    onClick={() => handleMenuSelection('Active')}>wybierz
+                                    onClick={() => handleMenuSelection('Active')}>
+                                    {selectedMenu === 'Active' ? 'wybrany' : 'wybierz'}
                                 </button>
                                 <a className={"menu-more__desc"}>zobacz menu i opis</a>
                             </div>
@@ -303,17 +297,17 @@ const Zamowienie = () => {
 
     return (
         <div className="page">
-            <section className={"section-padding"}>
-            <div className="container box-padding">
-                <div className={"order-main__wrapper"}>
-                    <h1 className={"order-title"}>Zamówienie</h1>
-                    {steps.map((step, index) => (
-                        <div key={index} className="step-wrapper">
-                            {step}
-                        </div>
-                    ))}
+            <section className="section-padding">
+                <div className="container box-padding">
+                    <div className="order-main__wrapper">
+                        <h1 className="order-title">Zamówienie</h1>
+                        {steps.map((step, index) => (
+                            <div key={index} className="step-wrapper">
+                                {step}
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
             </section>
         </div>
     );
