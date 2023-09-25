@@ -38,11 +38,23 @@
   width: 100%;
 }
 
-.videos-bg {
+.video-img {
+  display: none;
+}
+
+.video-img {
   @media screen and (max-width: 992px) {
-    muted: false;
-    loop: false;
-    autoplay: false;
+    display: block;
+
+    .video__bg--img {
+      width: 100%;
+    }
+  }
+}
+
+.hero-video {
+  @media screen and (max-width: 992px) {
+    display: none;
   }
 }
 

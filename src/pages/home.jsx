@@ -4,6 +4,7 @@ import videoPath from '../assets/bg-video.webm';
 import standardImage from '../assets/standard.jpeg';
 import vegeImage from '../assets/vege.jpeg';
 import activeImage from '../assets/active.jpeg';
+import videoImg from '../assets/video-bg.png';
 
 const Home = (props) => {
 
@@ -30,6 +31,9 @@ const Home = (props) => {
             )}
             <section className="hero-section">
                 <h1 className="heading-main">Zasmakuj wygody <br></br> z Naszym cateringiem</h1>
+                <div className="video-img">
+                    <img src={videoImg} alt="Video bg" className="video__bg--img" />
+                </div>
                 <figure>
                 <video muted loop autoPlay className="hero-video">
                     <source src={videoPath} type="video/webm"/>
