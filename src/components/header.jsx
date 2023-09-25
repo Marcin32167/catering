@@ -37,7 +37,7 @@ const Header = (props) => {
                 <div className="wrapper__nav">
                     <div className="wrapper__btns--nav">
                         <Link to="/logowanie">
-                            <button className={"btn__secondary"}>panel klienta</button>
+                            <button className={"btn__secondary"} onClick={closeMenu}>panel klienta</button>
                         </Link>
                         <Link to="/zamowienie">
                             <button className={"btn__main"}>zamawiam</button>
@@ -66,7 +66,7 @@ const Header = (props) => {
                                 </NavLink>
                             </li>
                             <Link to="/logowanie">
-                                <button className={"btn__secondary"}>panel klienta</button>
+                                <button className={"btn__secondary"} onClick={closeMenu}>panel klienta</button>
                             </Link>
                         </ul>
                     </nav>
