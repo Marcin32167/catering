@@ -41,7 +41,7 @@ function App() {
     useEffect(() => {
         const favicon = document.getElementById('favicon');
         if (favicon) {
-            favicon.href = isDay ? '/logo-day.svg' : '/logo-night.svg';
+            favicon.href = isDay ? '../src/assets/logo-day.svg' : '../src/assets/logo-night.svg';
         }
     }, [isDay]);
 
@@ -62,6 +62,7 @@ function App() {
                 </Routes>
                 <Footer />
             </div>
+            <link rel="icon" type="image/svg+xml" href="/icon.svg" id="favicon" />
         </Router>
     );
 }
