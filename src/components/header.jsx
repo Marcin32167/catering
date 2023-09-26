@@ -56,12 +56,12 @@ const Header = (props) => {
                         </div>
                         <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
                             <li className="nav-item">
-                                <NavLink to="/" exact activeClassName="active" onClick={closeMenu}>
+                                <NavLink to="/" onClick={closeMenu}>
                                     Home
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/about" activeClassName="active" onClick={closeMenu}>
+                                <NavLink to="/about"  onClick={closeMenu}>
                                     About
                                 </NavLink>
                             </li>
