@@ -41,7 +41,7 @@ function App() {
     useEffect(() => {
         const favicon = document.getElementById('favicon');
         if (favicon) {
-            favicon.href = isDay ? '/logo-day.svg' : '/logo-night.svg';
+            favicon.href = isDay ? '/assets/logo-day.svg' : '/assets/logo-night.svg';
         }
     }, [isDay]);
 
