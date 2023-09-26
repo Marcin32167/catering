@@ -1,4 +1,3 @@
-// Komponent App
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from '../src/components/header.jsx';
@@ -37,6 +36,14 @@ function App() {
             clearInterval(interval);
         };
     }, []);
+
+    // Aktualizacja ikony w karcie przeglądarki
+    useEffect(() => {
+        const favicon = document.getElementById('favicon');
+        if (favicon) {
+            favicon.href = isDay ? '/icon-day.svg' : '/icon-night.svg';
+        }
+    }, [isDay]);
 
     return (
         <Router>

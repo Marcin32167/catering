@@ -82,10 +82,6 @@ const Home = (props) => {
                     </div>
                 </div>
             </section>
-            <img
-                src={props.isDay ? '/logo-day.svg' : '/logo-night.svg'}
-                alt={props.isDay ? 'Logo w ciągu dnia' : 'Logo w nocy'}
-            />
         </div>
     );
 };
