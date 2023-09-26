@@ -7,6 +7,7 @@ import menuActive from '../assets/active-menu.jpg';
 import leftArrowSvg from '../assets/arrow-left.svg';
 import rightArrowSvg from '../assets/arrow-right.svg';
 
+
 const Calendar = ({ selectedDate, onChange, isNextMonth }) => {
     const currentDate = new Date();
     const initialDisplayedDate = isNextMonth
