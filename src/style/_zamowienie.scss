@@ -28,6 +28,10 @@
 
 }
 
+.step-wrapper {
+  padding: 0 0 0 15px;
+}
+
 .step-title {
   font-family: "Poppins Medium", sans-serif;
   font-size: 1.563rem;
@@ -49,6 +53,16 @@
   border: 1px solid $white;
   border-radius: 4px;
   padding: 40px;
+
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+  }
+
+  .step__calendar {
+    @media screen and (max-width: 768px) {
+      padding: 0 12px 0 12px;
+    }
+  }
 }
 
 .btns-wrapper__first-step {

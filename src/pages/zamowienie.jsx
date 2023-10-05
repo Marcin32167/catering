@@ -267,7 +267,7 @@ const Zamowienie = () => {
                 );
             case 5:
                 return (
-                    <div className="step">
+                    <div className="step step">
                         <div className={"checkbox-order"}>
                             <img src={checkBox} alt="Standard" className="checkbox-image"/>
                         </div>
