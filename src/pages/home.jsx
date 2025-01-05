@@ -5,6 +5,8 @@ import standardImage from '../assets/standard.jpeg';
 import vegeImage from '../assets/vege.jpeg';
 import activeImage from '../assets/active.jpeg';
 import videoImg from '../assets/video-bg.png';
+import Slider from '../components/slider.jsx';  // Import Slider komponentu
+
 
 const Home = (props) => {
 
@@ -29,17 +31,20 @@ const Home = (props) => {
                     </div>
                 </div>
             )}
-            <section className="hero-section">
-                <h1 className="heading-main">Zasmakuj wygody <br></br> z Naszym cateringiem</h1>
-                <div className="video-img">
-                    <img src={videoImg} alt="Video bg" className="video__bg--img" />
-                </div>
-                <figure>
-                <video muted loop autoPlay className="hero-video">
-                    <source src={videoPath} type="video/webm"/>
-                </video>
-                </figure>
-            </section>
+            {/*<section className="hero-section">*/}
+            {/*    <h1 className="heading-main">Zasmakuj wygody <br></br> z Naszym cateringiem</h1>*/}
+            {/*    <div className="video-img">*/}
+            {/*        <img src={videoImg} alt="Video bg" className="video__bg--img" />*/}
+            {/*    </div>*/}
+            {/*    <figure>*/}
+            {/*    <video muted loop autoPlay className="hero-video">*/}
+            {/*        <source src={videoPath} type="video/webm"/>*/}
+            {/*    </video>*/}
+            {/*    </figure>*/}
+            {/*</section>*/}
+
+            <Slider />  {/* Wyświetlenie Slidera */}
+
             <section className={"section-padding"}>
                 <div className="container box-padding">
                     <div className="heading-wrapper">
